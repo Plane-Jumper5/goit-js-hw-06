@@ -1,1 +1,35 @@
+class Storage {
+    constructor(initialItems) {
+        this._items = initialItems;
+    }
 
+    getItems() {
+        return this._items;
+    }
+
+    addItem(newItem) {
+        this._items.push(newItem);
+    }
+
+    removeItem(itemToRemove) {
+        const index = this._items.indexOf(itemToRemove);
+        if (index !== -1) {
+            this._items.splice(index, 1);
+        } else {
+            console.log(`${itemToRemove} not found in the storage.`);
+        }
+    }
+}
+
+
+const storage = new Storage(["Nanitoids", "Prolonger", "Antigravitator"]);
+console.log(storage.getItems()); 
+
+storage.addItem("Droid");
+console.log(storage.getItems()); 
+
+storage.removeItem("Prolonger");
+console.log(storage.getItems()); 
+
+storage.removeItem("Scaner");
+console.log(storage.getItems()); 
