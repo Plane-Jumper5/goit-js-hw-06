@@ -1,24 +1,26 @@
 class Storage {
     constructor(initialItems) {
-        this._items = initialItems;
+        this.#items = initialItems;
     }
 
     getItems() {
-        return this._items;
+        return this.#items;
     }
 
     addItem(newItem) {
-        this._items.push(newItem);
+        this.#items.push(newItem);
     }
 
     removeItem(itemToRemove) {
-        const index = this._items.indexOf(itemToRemove);
+        const index = this.#items.indexOf(itemToRemove);
         if (index !== -1) {
-            this._items.splice(index, 1);
+            this.#items.splice(index, 1);
         } else {
             console.log(`${itemToRemove} not found in the storage.`);
         }
     }
+
+    #items; 
 }
 
 
@@ -32,4 +34,4 @@ storage.removeItem("Prolonger");
 console.log(storage.getItems()); 
 
 storage.removeItem("Scaner");
-console.log(storage.getItems()); 
+console.log(storage.getItems());

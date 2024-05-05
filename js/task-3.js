@@ -1,25 +1,26 @@
 class StringBuilder {
+    #value;
+
     constructor(initialValue) {
-        this._value = initialValue;
+        this.#value = initialValue;
     }
 
     getValue() {
-        return this._value;
+        return this.#value;
     }
 
     padEnd(str) {
-        this._value += str;
+        this.#value += str;
     }
 
     padStart(str) {
-        this._value = str + this._value;
+        this.#value = str + this.#value;
     }
 
     padBoth(str) {
-        this._value = str + this._value + str;
+        this.#value = str + this.#value + str;
     }
 }
-
 
 const builder = new StringBuilder(".");
 console.log(builder.getValue()); 
@@ -28,4 +29,4 @@ console.log(builder.getValue());
 builder.padEnd("^");
 console.log(builder.getValue()); 
 builder.padBoth("=");
-console.log(builder.getValue()); 
+console.log(builder.getValue());
